@@ -1,23 +1,20 @@
 <template>
   <header>
-    <!-- Logo -->
+    <!-- Logo + Name -->
     <div class="logo">
-      <router-link to="/">
+      <router-link to="/" class="logo-container">
         <ComputerLogo class="logo-icon" />
+        <span class="logo-text">QuickChart</span>
       </router-link>
     </div>
 
-    <!-- Navigation Links -->
-    <nav>
+    <!-- Navigation Links + Login -->
+    <nav class="nav-links">
       <router-link to="/">Home</router-link>
-      <router-link to="/Login">About</router-link>
-      <router-link to="/Login">Services</router-link>
+      <router-link to="/login">About</router-link>
+      <router-link to="/login">Services</router-link>
+      <router-link to="/login" class="login-link">Login</router-link>
     </nav>
-
-    <!-- Login Link -->
-    <div class="profile">
-      <router-link to="/Login" class="login-link">Login</router-link>
-    </div>
   </header>
 </template>
 
@@ -39,34 +36,59 @@ header {
   background: #8da9c7;
   color: white;
   padding: 1em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Logo container (logo + name) */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 /* Logo styling */
 .logo-icon {
-  height: 45px;     /* size of logo */
-  fill: white;      /* color of logo (change this!) */
+  height: 45px;
+  fill: white;
   width: auto;
 }
 
+/* Logo name styling */
+.logo-text {
+  font-family: 'IBM Plex Mono', monospace;
+  color: rgb(13, 44, 76);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
 /* Navigation styling */
-nav a {
+.nav-links {
+  display: flex;
+  flex: 1; /* Fill space */
+  justify-content: flex-end; /* Push links to right */
+  gap: 40px; /* Space between links */
+}
+
+.nav-links a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 12px;
 }
 
-nav a.router-link-active {
-  font-weight: bold;
-}
-
-/* Login link styling */
+/* Login link styling (button look) */
 .login-link {
+  background-color: #003366;
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
 }
 
 .login-link:hover {
-  text-decoration: underline;
+  background-color: #002244;
 }
 </style>
