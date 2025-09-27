@@ -2,6 +2,9 @@ package com.backend.controller;
 
 import com.backend.model.User;
 import com.backend.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +27,15 @@ public class AuthController {
         return ResponseEntity.ok(savedUser);
     }
 
-    // Login endpoint
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User loginData) {
-        Optional<User> userOpt = userRepository.findByUsername(loginData.getUsername());
-        if (userOpt.isPresent() && userOpt.get().getPassword().equals(loginData.getPassword())) {
-            return ResponseEntity.ok("Login successful!");
-        }
+    public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
+    Optional<User> dbUser = userRepository.findByUsername(user.getUsername());
+
+    if(dbUser.isPresent() && dbUser.get().getPassword().equals(user.getPassword())) {
+        session.setAttribute("user", dbUser.get()); // store user in session
+        return ResponseEntity.ok("Login successful!");
+    } else {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+    }
     }
 }
