@@ -1,5 +1,6 @@
 C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\BackendApplication.java
+C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\controller\AiController.java
 C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\controller\AuthController.java
-C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\controller\HelloController.java
 C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\model\User.java
 C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\repository\UserRepository.java
+C:\Users\jakew\Downloads\Code-Jackets HackGT12\HackGT12\backend\src\main\java\com\backend\service\OpenAiService.java

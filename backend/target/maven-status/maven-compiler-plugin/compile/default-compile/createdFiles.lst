@@ -1,3 +1,5 @@
 com\backend\BackendApplication.class
+com\backend\model\User.class
 com\backend\BackendApplication$1.class
-com\backend\controller\HelloController.class
+com\backend\controller\AuthController.class
+com\backend\repository\UserRepository.class
