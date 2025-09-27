@@ -8,11 +8,11 @@
       </router-link>
     </div>
 
-    <!-- Navigation Links + Login -->
+    <!-- Navigation Links -->
     <nav class="nav-links">
       <router-link to="/">Home</router-link>
       <router-link to="/login">About</router-link>
-      <router-link to="/login">Services</router-link>
+      <router-link to="/services">Services</router-link> <!-- fixed route -->
       <router-link to="/login" class="login-link">Login</router-link>
     </nav>
   </header>
@@ -39,21 +39,21 @@ header {
   font-family: 'IBM Plex Mono', monospace;
 }
 
-/* Logo container (logo + name) */
+/* Logo container */
 .logo-container {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
-/* Logo styling */
+/* Logo icon */
 .logo-icon {
   height: 45px;
   fill: white;
   width: auto;
 }
 
-/* Logo name styling */
+/* Logo text */
 .logo-text {
   font-family: 'IBM Plex Mono', monospace;
   color: rgb(13, 44, 76);
@@ -62,12 +62,12 @@ header {
   margin-left: 10px;
 }
 
-/* Navigation styling */
+/* Navigation links */
 .nav-links {
   display: flex;
-  flex: 1; /* Fill space */
-  justify-content: flex-end; /* Push links to right */
-  gap: 40px; /* Space between links */
+  flex: 1;
+  justify-content: flex-end;
+  gap: 40px;
 }
 
 .nav-links a {
@@ -77,7 +77,6 @@ header {
   padding: 8px 12px;
 }
 
-/* Login link styling (button look) */
 .login-link {
   background-color: #003366;
   color: white;
