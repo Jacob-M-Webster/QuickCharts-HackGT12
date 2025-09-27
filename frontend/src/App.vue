@@ -33,6 +33,12 @@ export default {
 /* Import IBM Plex Mono font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Homepage container — background fills entire area */
 .homepage-container {
   height: calc(100vh - 80px); /* full viewport minus header */
@@ -81,6 +87,6 @@ export default {
 }
 
 .appointment-button:hover {
-  background-color: #0b2b52; /* slightly lighter on hover */
+  background-color: #0b2b52; /* slightly darker on hover */
 }
 </style>
