@@ -5,3 +5,9 @@
     <footer>Footer</footer>
   </div>
 </template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>

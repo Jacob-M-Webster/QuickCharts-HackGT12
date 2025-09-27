@@ -14,6 +14,9 @@ dist-ssr
 coverage
 *.local
 
+/backend/data/*.mv.db
+/beackend/data/*.trace.db
+/target/
 /backend/target/
 
 /cypress/videos/

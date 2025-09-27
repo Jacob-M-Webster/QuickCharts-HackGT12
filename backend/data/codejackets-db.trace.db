@@ -16,3 +16,6 @@ SELECT * FROM "users" [42103-232]
 2025-09-27 10:12:46.722649-04:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "users" not found (candidates are: "USERS"); SQL statement:
 SELECT * FROM "users" [42103-232]
+2025-09-27 11:46:10.262150-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USER" not found; SQL statement:
+SELECT * FROM "USER" [42102-232]
