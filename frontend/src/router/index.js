@@ -5,6 +5,7 @@ import RegistrationPage from '../pages/register.vue';
 import ProfilePage from '../pages/profile.vue';
 import About from "../pages/about.vue";
 import ServicePage from '../pages/service.vue';
+import QuestionnairePage from '../pages/questionnaire.vue';
 
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
   { path: '/profile', name: 'Profile', component: ProfilePage},
   { path: "/about", name: "About", component: About },
   { path: '/services', name: "Services", component: ServicePage },
+  { path: '/questionnaire', name: "Questionnaire", component: QuestionnairePage },
 
 ];
 
