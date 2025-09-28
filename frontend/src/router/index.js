@@ -6,17 +6,17 @@ import ProfilePage from '../pages/profile.vue';
 import About from "../pages/about.vue";
 import ServicePage from '../pages/service.vue';
 import QuestionnairePage from '../pages/questionnaire.vue';
-
+import Question2Page from '../pages/question2.vue'; // ✅ Import Question2.vue
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
   { path: '/login', name: 'Login', component: LoginPage },
   { path: '/registration', name: 'Register', component: RegistrationPage },
-  { path: '/profile', name: 'Profile', component: ProfilePage},
+  { path: '/profile', name: 'Profile', component: ProfilePage },
   { path: "/about", name: "About", component: About },
   { path: '/services', name: "Services", component: ServicePage },
   { path: '/questionnaire', name: "Questionnaire", component: QuestionnairePage },
-
+  { path: '/question2', name: "Question2", component: Question2Page }, // ✅ Add new route
 ];
 
 const router = createRouter({
