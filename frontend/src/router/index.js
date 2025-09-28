@@ -9,7 +9,7 @@ import About from "../pages/about.vue";
 import ServicePage from '../pages/service.vue';
 import QuestionnairePage from '../pages/questionnaire.vue';
 import Question2Page from '../pages/question2.vue'; // ✅ Import Question2.vue
-import AppointmentPage from '../pages/appointment.vue';
+import SchedulePage from '../pages/schedule.vue';
 
 const routes = [
     { path: '/', name: 'Home', component: HomePage },
@@ -20,7 +20,6 @@ const routes = [
     { path: '/services', name: 'Services', component: ServicePage },
     { path: '/questionnaire', name: 'Questionnaire', component: Question2Page },
     { path: '/schedule', name: 'Schedule', component: SchedulePage },
-    { path: '/appointment', name: 'Appointment', component: AppointmentPage},
 ];
 
 const router = createRouter({
