@@ -11,13 +11,8 @@
     <!-- Navigation Links -->
     <nav class="nav-links">
       <router-link to="/">Home</router-link>
-<<<<<<< HEAD
-      <router-link to="/login">About</router-link>
-      <router-link to="/services">Services</router-link> <!-- fixed route -->
-=======
       <router-link to="/about">About</router-link>
-      <router-link to="/login">Services</router-link>
->>>>>>> about-page
+      <router-link to="/services">Services</router-link>
       <router-link to="/login" class="login-link">Login</router-link>
     </nav>
   </header>
