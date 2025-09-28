@@ -7,14 +7,13 @@
 
     <!-- Appointment Form -->
     <form @submit.prevent="submitAppointment" class="space-y-4">
-      <!-- Full Name (Readonly, Autofilled) -->
+      <!-- Full Name (Editable) -->
       <div>
         <label class="block font-semibold mb-1">Full Name</label>
         <input
             v-model="form.name"
             type="text"
             class="w-full border rounded p-2 bg-white"
-            readonly
         />
       </div>
 
@@ -133,12 +132,18 @@
 
 <script setup>
 import { reactive, ref, computed } from "vue";
+import { useRouter } from "vue-router";
+
+// ===============================
+// Router
+// ===============================
+const router = useRouter();
 
 // ===============================
 // Form state
 // ===============================
 const form = reactive({
-  name: "",       // Full name (autofilled)
+  name: "",       // Full name (editable now)
   birthdate: "",
   gender: "",
   language: "",
@@ -157,7 +162,7 @@ const formattedTime = computed(() => {
   const [hourStr, minute] = form.time.split(":");
   let hour = parseInt(hourStr, 10);
   const ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12 || 12; // convert 0 -> 12 for midnight
+  hour = hour % 12 || 12;
   return `${hour}:${minute} ${ampm}`;
 });
 
@@ -170,7 +175,6 @@ const confirmationMessage = computed(() => {
   const time = formattedTime.value;
   const type = form.type;
 
-  // You can add more languages as needed
   switch (form.language) {
     case "English":
       return `Appointment booked successfully for ${name} on ${date} at ${time} (${type}).`;
@@ -196,34 +200,8 @@ function submitAppointment() {
   submitted.value = true;
   console.log("Appointment Details:", form);
 
-  // ===== BACKEND INTEGRATION COMMENTS =====
-  // 1. Send the form data to the backend via an API call.
-  //    Example API endpoint: POST /api/appointments
-  //    Payload should include:
-  //       - userId (to link the appointment to a user)
-  //       - name, birthdate, gender, language
-  //       - type, date, time
-  //
-  // 2. Backend should store this appointment in a database.
-  //    Suggested fields:
-  //       - appointmentId
-  //       - userId
-  //       - name
-  //       - birthdate
-  //       - gender
-  //       - language
-  //       - type
-  //       - date
-  //       - time
-  //       - status (upcoming, completed, canceled)
-  //
-  // 3. When the user visits the Profile page, the frontend should request:
-  //       GET /api/appointments?userId=<current_user_id>&status=upcoming
-  //    Backend should return all upcoming appointments for that user.
-  //
-  // 4. Frontend can then display these in the Upcoming Appointments section.
-  //
-  // 5. Optional: Backend can return a confirmation message or appointment ID.
+  // Navigate to questionnaire page
+  router.push({ name: "Questionnaire" });
 }
 </script>
 
