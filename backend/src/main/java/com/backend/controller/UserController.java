@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -25,4 +25,11 @@ public class UserController {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @GetMapping("/users/{id}")   // or /users/me if you implement auth
+    public User getUser(@PathVariable Long id) {
+    return userRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+}
+
 }

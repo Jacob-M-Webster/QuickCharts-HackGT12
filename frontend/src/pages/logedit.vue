@@ -92,9 +92,15 @@ export default {
           username: this.username,
           password: this.password
         });
-        this.message = response.data.message || 'Login successful!';
-        // TODO: Save user info or token
-        // TODO: Redirect user
+
+        const loggedInUser = response.data;
+        console.log(loggedInUser);
+
+        // Save user info locally (optional)
+        localStorage.setItem('userId', loggedInUser.id);
+
+        // Redirect to profile page with user ID as route param
+        this.$router.push(`/profile/${loggedInUser.id}`);
       } catch (error) {
         this.message = error.response?.data?.message || 'Login failed';
       }

@@ -28,14 +28,22 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user, HttpSession session) {
-    Optional<User> dbUser = userRepository.findByUsername(user.getUsername());
+    public ResponseEntity<User> login(@RequestBody User user, HttpSession session) {
+        Optional<User> dbUser = userRepository.findByUsername(user.getUsername());
 
-    if(dbUser.isPresent() && dbUser.get().getPassword().equals(user.getPassword())) {
-        session.setAttribute("user", dbUser.get()); // store user in session
-        return ResponseEntity.ok("Login successful!");
-    } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        if(dbUser.isPresent() && dbUser.get().getPassword().equals(user.getPassword())) {
+            session.setAttribute("user", dbUser.get());
+            return ResponseEntity.ok(dbUser.get()); // return the User object
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        }
     }
-    }
+
+
+
+    @GetMapping("/users/{id}")   // or /users/me if you implement auth
+    public User getUser(@PathVariable Long id) {
+    return userRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+    }   
 }

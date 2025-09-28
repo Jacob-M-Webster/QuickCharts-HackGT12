@@ -14,7 +14,7 @@ const routes = [
     { path: '/', name: 'Home', component: HomePage },
     { path: '/login', name: 'Login', component: LogEdit }, // use your new login page
     { path: '/registration', name: 'Register', component: RegEdit },
-    { path: '/profile', name: 'Profile', component: ProfilePage },
+    { path: '/profile/:id', name: 'Profile', component: ProfilePage },
     { path: '/about', name: 'About', component: About },
     { path: '/services', name: 'Services', component: ServicePage },
     { path: '/questionnaire', name: 'Questionnaire', component: QuestionnairePage },
