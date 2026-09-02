@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = import.meta.env.VITE_OPEN_AI_KEY;
 
 const conversation = ref([]);
 const userInput = ref('');
